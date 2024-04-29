@@ -24,14 +24,14 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    // await client.connect();
+    await client.connect();
     //collection 
     const database=client.db('Assingment').collection('tourist') 
     //create
     app.get('/',(req,res)=>{
       res.send('running the server')
   })
-  
+
     app.get('/insert',async(req,res)=>{
       data={name:"sporsho",
             job:"sorkari",
