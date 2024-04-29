@@ -55,21 +55,21 @@ async function run() {
      res.send(resul)
     })
     //read one
-    app.get('/one',(req,res)=>{
+    app.get('/one',async(req,res)=>{
      
-      const result= database.findOne({
+      const result=await database.findOne({
         name:
         "sporsho"})      
        res.send(result)
-       console.log(result)
+       
     })
 // delete
-app.get('/Delete',(req,res)=>{
+app.get('/Delete',async(req,res)=>{
      
-  const result= database.deleteOne({
+  const result=await database.deleteOne({
     name:"sporsho"})      
    res.send(result)
-   console.log(result)
+  
 })
 //update
 app.get('/Update',async(req,res)=>{  
