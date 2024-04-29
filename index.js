@@ -50,8 +50,8 @@ async function run() {
     //read all
     app.get('/Get',async(req,res)=>{
      
-      const result=  database.find()
-      const resul=await result.toArray()
+      const result= await database.find()
+      const resul= result.toArray()
      res.send(resul)
     })
     //read one
