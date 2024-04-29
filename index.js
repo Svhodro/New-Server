@@ -5,7 +5,13 @@ require('dotenv').config()
 const port= 5000
 
 //middelware
-app.use(cors())
+const corsConfig = {
+  origin: '',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}
+app.use(cors(corsConfig))
+app.options("", cors(corsConfig))
 app.use(express.json())
 
 
