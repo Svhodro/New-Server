@@ -50,23 +50,23 @@ async function run() {
     //read all
     app.get('/Get',async(req,res)=>{
      
-      const result= await database.find()
-      const resul= result.toArray()
+      const result=  database.find()
+      const resul=await result.toArray()
      res.send(resul)
     })
     //read one
-    app.get('/one',async(req,res)=>{
+    app.get('/one',(req,res)=>{
      
-      const result= await database.findOne({
+      const result= database.findOne({
         name:
         "sporsho"})      
        res.send(result)
        console.log(result)
     })
 // delete
-app.get('/Delete',async(req,res)=>{
+app.get('/Delete',(req,res)=>{
      
-  const result= await database.deleteOne({
+  const result= database.deleteOne({
     name:"sporsho"})      
    res.send(result)
    console.log(result)
